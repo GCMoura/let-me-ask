@@ -39,11 +39,15 @@ export default function Home(){
       alert("Room does not exists.")
       return
     }
+
+    if(roomRef.val().endedAt){
+      alert('Room Already Closed')
+      return
+    }
+
     //se a sala existe encaminha para a página da sala
     history.push(`/rooms/${roomCode}`)
-
   }
-
 
   return (
     <div id="page-auth">
