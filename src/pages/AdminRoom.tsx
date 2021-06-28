@@ -18,7 +18,6 @@ type RoomParams = {
 
 export function AdminRoom(){
   const history = useHistory()
-  // const { user } = useAuth()
   const params = useParams<RoomParams>()
   const roomId = params.id 
 
