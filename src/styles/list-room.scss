@@ -1,0 +1,34 @@
+.content{ 
+  > img{
+    cursor: pointer;
+  }
+}
+
+.room-content{
+  width: 50%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  padding: 20px;
+  background: chartreuse;
+
+  button{
+    height: 50px;
+    border-radius: 8px;
+    font-weight: 500;
+    background: #835afd;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    padding: 0 32px;
+    border: 0;
+    transition: filter 0.2s;
+  }
+  
+  h2{
+    background: coral;
+    align-items: center;
+  }
+}

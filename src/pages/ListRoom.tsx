@@ -1,41 +1,53 @@
-
+import { useState } from 'react'
+import { useHistory } from 'react-router-dom'
 import { useEffect } from 'react'
+
 import { database } from '../services/firebase'
 
 import logoImg from '../assets/images/logo.svg'
-import { useState } from 'react'
 
-type RoomType = {
-  code: string,
-  title: string
-}
+import '../styles/list-room.scss'
+
 
 export function ListRoom(){
 
-  const [rooms, setRooms] = useState<RoomType[]>([])
+  const history = useHistory()
+
+  var room: any[] = []
+  
+  const [rooms, setRooms] = useState([room])
   
   useEffect(() => {
-     database.ref('rooms').get().then((snapshot) => {
-        console.log(snapshot.val())
-        let object = snapshot.val() 
-        let arr = Object.entries(object)
-        createSet(arr)
-      })
-    }, [ ] )
+    var roomUniqueArray: any[] = []
+    var titles: any[] = []
+    var codes: any[] = []
+     
+    database.ref('rooms').on('value', (snapshot) => {
+      codes.push(Object.keys(snapshot.val()))
 
-  function createSet(arr: any){
-    arr.map((each: any) => {
-      each.map((key: any, value: any) => {
-        return setRooms(key)
+        snapshot.forEach(item => {
+          titles.push(item.val().title)
+        })
+
       })
-    })
+
+      for (let index = 0; index < titles.length; index++) {
+        roomUniqueArray.push(codes[0][index], titles[index] )      
+      }
+  
+      setRooms(roomUniqueArray)
+      
+    }, [] )
+
+  function handleHome(){
+    history.push('/')
   }
 
   return (
     <div id='page-room'>
       <header>
         <div className="content">
-          <img src={logoImg} alt="Logo" />
+          <img src={logoImg} alt="Logo" onClick={handleHome}/>
         </div>
       </header>
 
@@ -43,8 +55,18 @@ export function ListRoom(){
         <div className="room-title">
           <h1>Lista de salas</h1>
         </div>
-        <div>
-          {typeof(rooms)}
+        <div className='room-content'>
+          {
+            rooms.map((room, index) => {
+              return index % 2 === 0 ? 
+
+                <button>{room}</button>
+
+                :
+
+                <button>{room}</button>
+            })
+          }
         </div>
       </main>
     </div>
