@@ -49,6 +49,10 @@ export default function Home(){
     history.push(`/rooms/${roomCode}`)
   }
 
+  function handleListRoom(){
+    history.push("/rooms/list")
+  }
+
   return (
     <div id="page-auth">
       <aside>
@@ -77,6 +81,9 @@ export default function Home(){
               Entrar na sala
             </Button>
           </form>
+          <Button className="list-room-button" onClick={handleListRoom}>
+            Listar Salas
+          </Button>
         </div>
       </main>
     </div>

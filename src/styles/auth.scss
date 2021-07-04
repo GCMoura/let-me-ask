@@ -44,6 +44,7 @@ main{
   max-width: 320px;
   align-items: stretch;
   text-align: center;
+  gap: 10px;
 
   > img {
     align-items: center;
@@ -78,6 +79,21 @@ main{
   }
   a{
     color: #e559f9;
+  }
+
+  .list-room-button{
+    height: 50px;
+    border-radius: 8px;
+    font-weight: 500;
+    background: chocolate;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    padding: 0 32px;
+    border: 0;
+    transition: filter 0.2s;
   }
 }
 

@@ -62,7 +62,11 @@ export function Room(){
     }
   }
 
+<<<<<<< HEAD
   function returnHome(){
+=======
+  function handleHome(){
+>>>>>>> listRooms
     history.push('/')
   }
 
@@ -70,7 +74,11 @@ export function Room(){
     <div id='page-room'>
       <header>
         <div className="content">
+<<<<<<< HEAD
           <img src={logoImg} alt="Logo" onClick={returnHome}/>
+=======
+          <img src={logoImg} alt="Logo" onClick={handleHome}/>
+>>>>>>> listRooms
           <RoomCode code={roomId}/>
         </div>
       </header>
