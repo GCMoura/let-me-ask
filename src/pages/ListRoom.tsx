@@ -18,29 +18,33 @@ export function ListRoom(){
   const [rooms, setRooms] = useState([room])
   
   useEffect(() => {
-    var roomUniqueArray: any[] = []
     var titles: any[] = []
-    var codes: any[] = []
      
-    database.ref('rooms').on('value', (snapshot) => {
-      codes.push(Object.keys(snapshot.val()))
-
-        snapshot.forEach(item => {
-          titles.push(item.val().title)
-        })
-
-      })
-
-      for (let index = 0; index < titles.length; index++) {
-        roomUniqueArray.push(codes[0][index], titles[index] )      
-      }
-  
-      setRooms(roomUniqueArray)
+    database.ref('rooms').on('value', (snapshot: any) => {
+      
+      Object.entries(snapshot.val()).forEach(([key, value]: any) => {
+        titles.push(value.title)
+      }) 
+    })
+    setRooms(titles)
       
     }, [] )
 
   function handleHome(){
     history.push('/')
+  }
+
+  function handleRoom(index: number){
+    var codes: any[] = []
+     
+    database.ref('rooms').on('value', (snapshot: any) => {
+      
+      Object.entries(snapshot.val()).forEach(([key, value]: any) => {
+        codes.push(key)
+      }) 
+    })
+
+    history.push(`/rooms/${codes[index]}`)
   }
 
   return (
@@ -58,14 +62,10 @@ export function ListRoom(){
         <div className='room-content'>
           {
             rooms.map((room, index) => {
-              return index % 2 === 0 ? 
-
-                <button>{room}</button>
-
-                :
-
-                <button>{room}</button>
-            })
+              return (
+                <button key={index} onClick={ () => handleRoom(index)}>{room}</button>
+              )
+              })
           }
         </div>
       </main>
