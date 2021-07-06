@@ -4,6 +4,13 @@
   height: 100vh;
 }
 
+@media(max-width: 750px){
+  #page-auth{
+    display: flex;
+    flex-direction: column;
+  }
+}
+
 aside{
   flex: 7;
   background: #835afd;
@@ -29,12 +36,44 @@ aside{
   }
 }
 
+@media(max-width: 450px){
+  aside{
+    flex: 1 ;
+    height: 20vh;
+    max-width: 100%;
+    padding: 10px 8px;
+    align-items: center;
+  
+    img{
+      max-width: 150px;
+    }
+    strong{
+      font-size: 16px;
+      margin-top: 4px;
+    }
+    p{
+      font-size: 16px;
+      line-height: 12px;
+      margin-top: 4px;
+    }
+    
+  }
+
+}
+
 main{
   flex: 8;
   padding: 0 32px;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+@media(max-width: 750px){
+  main{
+    flex: 1;
+    padding: 0 0;
+  }
 }
 
 .main-content{
@@ -97,6 +136,21 @@ main{
   }
 }
 
+@media(max-width: 750px){
+  .main-content{
+    max-width: 400px;
+    gap: 1px;
+    align-items: center;
+ 
+  >img{
+    width: 120px;
+  }
+  .list-room-button{
+    height: 30px;
+  }
+}
+}
+
 .separator{
   font-size: 14px;
   color: #a8a8b3;
@@ -117,6 +171,12 @@ main{
     height: 1px;
     background: #a8a8b3;
     margin-left: 16px;
+  }
+}
+@media (max-width:450px) {
+  .separator{
+    font-size: 12px;
+    margin: 15px 0;
   }
 }
 
@@ -140,5 +200,13 @@ main{
 
   &:hover{
     filter: brightness(0.9);
+  }
+}
+
+@media(max-width: 450px){
+  .create-room{
+    margin-top: 10px;
+    height: 30px;
+    padding: 5px 5px;
   }
 }

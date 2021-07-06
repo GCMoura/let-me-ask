@@ -80,10 +80,10 @@ export default function Home(){
             <Button type="submit">
               Entrar na sala
             </Button>
-          </form>
           <Button className="list-room-button" onClick={handleListRoom}>
             Listar Salas
           </Button>
+          </form>
         </div>
       </main>
     </div>
