@@ -39,7 +39,7 @@ export default function NewRoom(){
       <aside>
         <img src={illustrationImg} alt='Illustration'/>
         <strong>Crie salas de Q&amp;A ao vivo</strong>
-        <p>TIre as dúvidas da sua audiência em tempo real</p>
+        <p>Tire as dúvidas da sua audiência em tempo real</p>
       </aside>
       <main>
         <div className="main-content">

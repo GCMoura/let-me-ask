@@ -53,9 +53,17 @@ export default function Home(){
     history.push("/rooms/list")
   }
 
+  function darkLightMode(){
+    var element = document.body;
+    element.classList.toggle("dark-mode");
+  }
+
   return (
     <div id="page-auth">
       <aside>
+        <button onClick={darkLightMode} className="dark-mode-button">Dark Mode
+          <span></span>
+        </button>
         <img src={illustrationImg} alt='Illustration'/>
         <strong>Crie salas de Q&amp;A ao vivo</strong>
         <p>Tire as dúvidas da sua audiência em tempo real</p>
@@ -80,10 +88,10 @@ export default function Home(){
             <Button type="submit">
               Entrar na sala
             </Button>
+          </form>
           <Button className="list-room-button" onClick={handleListRoom}>
             Listar Salas
           </Button>
-          </form>
         </div>
       </main>
     </div>

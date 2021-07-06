@@ -18,7 +18,23 @@ aside{
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   padding: 125px 80px;
+
+  button{
+    border-radius: 100px;
+    width: 70px;
+    height: 35px;
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    font-size: 12px;
+    background-color: #111;
+    color: #fff;
+    outline: none;
+    border: 1px solid black;
+    cursor: pointer;
+  }
 
   img{
     max-width: 320px;
@@ -136,7 +152,7 @@ main{
   }
 }
 
-@media(max-width: 750px){
+@media(max-width: 450px){
   .main-content{
     max-width: 400px;
     gap: 1px;
@@ -145,8 +161,14 @@ main{
   >img{
     width: 120px;
   }
+  h2{
+    font-size: 18px;
+    margin: 16px 0;
+  }
   .list-room-button{
     height: 30px;
+    width: 220px;
+    margin-top: 5px;
   }
 }
 }

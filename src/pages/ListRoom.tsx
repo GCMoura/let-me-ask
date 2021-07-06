@@ -26,6 +26,7 @@ export function ListRoom(){
         titles.push(value.title)
       }) 
     })
+    
     setRooms(titles)
       
     }, [] )

@@ -9,6 +9,18 @@ body{
   color: #29292e;
 }
 
+.dark-mode {
+  background-color: #555;
+  color: white;
+  aside{
+    background: indigo;
+  }
+  .dark-mode-button{
+    background-color: #fff;
+    color: #111;
+  }
+}
+
 body, input, button, textarea{
   font: 400 16px 'Roboto', sans-serif;
 }

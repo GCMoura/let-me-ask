@@ -25,7 +25,7 @@
       }
     }
   }
-
+ 
   main {
     max-width: 1000px;
     margin: 0 auto;
@@ -53,6 +53,14 @@
         font-size: 14px;
       }
     }
+    @media(max-width: 450px){
+      .room-title{
+        flex-direction: column;
+        gap: 8px;
+        margin: 26px 0 16px;
+      }
+    }
+
 
     form {
       width: 70%;
@@ -111,6 +119,12 @@
 
     .question-list{
       margin-top: 32px;
+    }
+    @media(max-width: 450px){
+      .question-list{
+        margin-top: 24px;
+        width: 95%;
+      }
     }
   }
 }
