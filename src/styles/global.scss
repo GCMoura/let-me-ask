@@ -18,6 +18,11 @@ body{
   .dark-mode-button{
     background-color: #fff;
     color: #111;
+
+    &:hover{
+      background-color: #ccc;
+      transition: ease-in 0.5s;
+    }
   }
 }
 
